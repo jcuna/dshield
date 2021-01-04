@@ -29,7 +29,7 @@ import syslog
 class DshieldSubmit:
     id = 0
     key = ''
-    url = 'https://www.dshield.org/submitapi/'
+    url = '{}/submitapi/'.format(os.environ['SUBMIT_URL'])
 
     types = ['email', 'firewall', 'sshlogin', 'telnetlogin', '404report', 'httprequest', 'webhoneypot']
     logtypesregex={'generic': '^([A-Z][a-z]{2})\s+([0-9]+)\s([0-9:]+).*(IN=.*)',
